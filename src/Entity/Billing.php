@@ -2,18 +2,18 @@
 
 namespace App\Entity;
 
-use App\Repository\RoomRepository;
+use App\Repository\BillingRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: RoomRepository::class)]
-class Room
+#[ORM\Entity(repositoryClass: BillingRepository::class)]
+class Billing
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\OneToOne(inversedBy: 'room', cascade: ['persist', 'remove'])]
+    #[ORM\ManyToOne(inversedBy: 'billings')]
     private ?resident $resident = null;
 
     public function getId(): ?int
