@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\MedicalrecordRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MedicalrecordRepository::class)]
@@ -35,6 +36,12 @@ class Medicalrecord
      */
     #[ORM\OneToMany(targetEntity: Treatment::class, mappedBy: 'medicalrecord')]
     private Collection $treatments;
+
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $medical_history = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $health_status = null;
 
     public function __construct()
     {
@@ -146,6 +153,30 @@ class Medicalrecord
                 $treatment->setMedicalrecord(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getMedicalHistory(): ?string
+    {
+        return $this->medical_history;
+    }
+
+    public function setMedicalHistory(?string $medical_history): static
+    {
+        $this->medical_history = $medical_history;
+
+        return $this;
+    }
+
+    public function getHealthStatus(): ?string
+    {
+        return $this->health_status;
+    }
+
+    public function setHealthStatus(?string $health_status): static
+    {
+        $this->health_status = $health_status;
 
         return $this;
     }

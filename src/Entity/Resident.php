@@ -8,23 +8,18 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ResidentRepository::class)]
-class Resident
+class Resident extends Person
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
-
     /**
      * @var Collection<int, Activity>
      */
-    #[ORM\ManyToMany(targetEntity: Activity::class, mappedBy: 'resident')]
+    #[ORM\ManyToMany(targetEntity: Activity::class, mappedBy: 'residents')]
     private Collection $activities;
 
     /**
      * @var Collection<int, Billing>
      */
-    #[ORM\OneToMany(targetEntity: Billing::class, mappedBy: 'resident')]
+    #[ORM\OneToMany(targetEntity: Billing::class, mappedBy: 'resident', cascade: ['persist', 'remove'])]
     private Collection $billings;
 
     #[ORM\OneToOne(mappedBy: 'resident', cascade: ['persist', 'remove'])]
@@ -39,20 +34,12 @@ class Resident
         $this->billings = new ArrayCollection();
     }
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return Collection<int, Activity>
-     */
     public function getActivities(): Collection
     {
         return $this->activities;
     }
 
-    public function addActivity(Activity $activity): static
+    public function addActivity(Activity $activity): self
     {
         if (!$this->activities->contains($activity)) {
             $this->activities->add($activity);
@@ -62,7 +49,7 @@ class Resident
         return $this;
     }
 
-    public function removeActivity(Activity $activity): static
+    public function removeActivity(Activity $activity): self
     {
         if ($this->activities->removeElement($activity)) {
             $activity->removeResident($this);
@@ -71,15 +58,12 @@ class Resident
         return $this;
     }
 
-    /**
-     * @return Collection<int, Billing>
-     */
     public function getBillings(): Collection
     {
         return $this->billings;
     }
 
-    public function addBilling(Billing $billing): static
+    public function addBilling(Billing $billing): self
     {
         if (!$this->billings->contains($billing)) {
             $this->billings->add($billing);
@@ -89,10 +73,9 @@ class Resident
         return $this;
     }
 
-    public function removeBilling(Billing $billing): static
+    public function removeBilling(Billing $billing): self
     {
         if ($this->billings->removeElement($billing)) {
-            // set the owning side to null (unless already changed)
             if ($billing->getResident() === $this) {
                 $billing->setResident(null);
             }
@@ -106,14 +89,12 @@ class Resident
         return $this->room;
     }
 
-    public function setRoom(?Room $room): static
+    public function setRoom(?Room $room): self
     {
-        // unset the owning side of the relation if necessary
         if ($room === null && $this->room !== null) {
             $this->room->setResident(null);
         }
 
-        // set the owning side of the relation if necessary
         if ($room !== null && $room->getResident() !== $this) {
             $room->setResident($this);
         }
@@ -121,7 +102,6 @@ class Resident
         $this->room = $room;
 
         return $this;
-        //ddddd
     }
 
     public function getMedicalrecord(): ?Medicalrecord
@@ -129,14 +109,12 @@ class Resident
         return $this->medicalrecord;
     }
 
-    public function setMedicalrecord(?Medicalrecord $medicalrecord): static
+    public function setMedicalrecord(?Medicalrecord $medicalrecord): self
     {
-        // unset the owning side of the relation if necessary
         if ($medicalrecord === null && $this->medicalrecord !== null) {
             $this->medicalrecord->setResident(null);
         }
 
-        // set the owning side of the relation if necessary
         if ($medicalrecord !== null && $medicalrecord->getResident() !== $this) {
             $medicalrecord->setResident($this);
         }
