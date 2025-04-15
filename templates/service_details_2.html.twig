@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>{{ service.title|default('Service Details V.2') }} - HelpMeBalance</title>
+    <link
+      rel="shortcut icon"
+      href="{{ asset('assets/images/site_logo/favourite_icon.svg') }}"
+    />
+
+    <!-- Framework - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/bootstrap.min.css') }}"
+    />
+
+    <!-- Icon Font - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/fontawesome.min.css') }}"
+    />
+
+    <!-- Animation - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/animate.min.css') }}"
+    />
+
+    <!-- Cursor - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/cursor.min.css') }}"
+    />
+
+    <!-- Carousel - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/slick.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/slick-theme.min.css') }}"
+    />
+
+    <!-- Video & Image Popup - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/magnific-popup.min.css') }}"
+    />
+
+    <!-- Counter - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/odometer.min.css') }}"
+    />
+
+    <!-- Custom - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Body Wrap - Start -->
+    <div class="page_wrapper">
+      <!-- Back To Top - Start -->
+      <div class="backtotop">
+        <a href="#" class="scroll">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+      <!-- Back To Top - End -->
+
+      <!-- Site Header - Start -->
+      <header class="site_header">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-3 col-5">
+              <div class="site_logo">
+                <a class="site_link" href="{{ path('home') }}">
+                  <img
+                    src="{{ asset('assets/images/site_logo/site_logo_primary - Copy.svg') }}"
+                    alt="Site Logo – HelpMeBalance"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6 col-2">
+              <nav class="main_menu navbar navbar-expand-lg">
+                <div
+                  class="main_menu_inner collapse navbar-collapse justify-content-center"
+                  id="main_menu_dropdown"
+                >
+                  <ul class="main_menu_list unordered_list">
+                    <li>
+                      <a class="nav-link" href="{{ path('home') }}">Home</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="{{ path('about') }}">About</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="{{ path('shop') }}">Shop</a>
+                    </li>
+                    <li class="dropdown active">
+                      <a
+                        class="nav-link"
+                        href="#"
+                        id="programs_submenu"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Programs
+                      </a>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="programs_submenu"
+                      >
+                        <li>
+                          <a href="{{ path('services') }}">Our Services</a>
+                        </li>
+                        <li>
+                          <a href="{{ path('service_depression') }}">Depression Therapy</a>
+                        </li>
+                        <li class="active">
+                          <a href="{{ path('service_relationships') }}">Relationships</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a
+                        class="nav-link"
+                        href="#"
+                        id="help_submenu"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Help
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="help_submenu">
+                        <li><a href="{{ path('team') }}">Our Team</a></li>
+                        <li><a href="{{ path('gallery') }}">Our Gallery</a></li>
+                        <li class="dropdown">
+                          <a
+                            class="nav-link"
+                            href="#"
+                            id="blog_submenu"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Blogs
+                          </a>
+                          <ul
+                            class="dropdown-menu"
+                            aria-labelledby="blog_submenu"
+                          >
+                            <li><a href="{{ path('blog_grid') }}">Blog Grid</a></li>
+                            <li><a href="{{ path('blog_list') }}">Blog Listing</a></li>
+                            <li>
+                              <a href="{{ path('blog_details') }}">Blog Details</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a href="{{ path('faq') }}">F.A.Q.</a></li>
+                        <li><a href="{{ path('error') }}">404 Error</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a
+                        class="nav-link"
+                        href="#"
+                        id="contact_submenu"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Contact
+                      </a>
+                      <ul
+                        class="dropdown-menu"
+                        aria-labelledby="contact_submenu"
+                      >
+                        <li>
+                          <a class="nav-link" href="{{ path('contact_clinic') }}"
+                            >Clinic Contacts</a
+                          >
+                        </li>
+                        <li>
+                          <a class="nav-link" href="{{ path('contact_info') }}"
+                            >Contact Information</a
+                          >
+                        </li>
+                        <li>
+                          <a class="nav-link" href="{{ path('contact_details') }}"
+                            >Contact Details</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="col-lg-3 col-5">
+              <ul class="header_btns_group unordered_list justify-content-end">
+                <li>
+                  <button
+                    class="mobile_menu_btn"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#main_menu_dropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <i class="far fa-bars"></i>
+                  </button>
+                </li>
+                <li>
+                  <a class="btn btn-primary" href="{{ path('login') }}">
+                    <span class="btn_text" data-text="Get A Consultation">
+                      Get A Consultation
+                    </span>
+                    <span class="btn_icon">
+                      <i class="fa-solid fa-arrow-up-right"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Site Header - End -->
+
+      <!-- Main Body - Start -->
+      <main class="page_content">
+        <!-- Page Banner - Start -->
+        <section class="page_banner decoration_wrapper">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <h1 class="page_title mb-0">{{ service.title|default('Relationships') }}</h1>
+              </div>
+              <div class="col-lg-6">
+                <ul
+                  class="breadcrumb_nav unordered_list justify-content-lg-end justify-content-center"
+                >
+                  <li><a href="{{ path('home') }}">Home</a></li>
+                  <li>{{ service.breadcrumb|default('Service Details V.2') }}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="decoration_item shape_leaf_1">
+            <img
+              src="{{ asset('assets/images/shapes/shape_leaf_left.svg') }}"
+              alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
+            />
+          </div>
+          <div class="decoration_item shape_leaf_2">
+            <img
+              src="{{ asset('assets/images/shapes/shape_leaf_right.svg') }}"
+              alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
+            />
+          </div>
+        </section>
+        <!-- Page Banner - End -->
+
+        <!-- Service Details Section - Start -->
+        <section class="service_details_section section_space_lg">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="service_cost_info p-0 mb-5">
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <h3 class="details_info_title">{{ service.info_title|default('General Informations') }}</h3>
+                      <a class="btn-link" href="{{ path('schedule_visit') }}">
+                        <span class="btn_text">Schedule a Visit</span>
+                        <span class="btn_icon"
+                          ><i class="fa-solid fa-arrow-up-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                    <div
+                      class="col-md-6 col-sm-6 d-md-flex justify-content-md-end d-sm-flex justify-content-sm-end"
+                    >
+                      <div class="item_price mb-0">
+                        <span class="price_value">${{ service.session_price|default('50') }}</span>
+                        <sub>Session price</sub>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="details_content">
+                  <p>
+                    {{ service.intro_description|default('Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing') }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="video_wrapper text-center"
+              style="background-image: url('{{ asset(service.video_poster|default('assets/images/video/video_poster_image_2-min.jpg')) }}');"
+            >
+              <a
+                class="video_play_btn popup_video"
+                href="{{ service.video_url|default('https://www.youtube.com/watch?v=7e90gBu4pas') }}"
+              >
+                <i class="fa-duotone fa-play"></i>
+              </a>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="details_content">
+                  <p>
+                    {{ service.main_description|default('Ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.') }}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <div class="details_content mb-5">
+                  <h3 class="details_info_title">
+                    {{ service.benefits_title|default('How a therapy can solve your problem?') }}
+                  </h3>
+                  <p class="mb-4">
+                    {{ service.benefits_intro|default('The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.') }}
+                  </p>
+                  <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                      <ul class="info_list unordered_list_block mb-md-4">
+                        {% for benefit in service.benefits_left|default([
+                          'Realize you are not a victim',
+                          'Change it up',
+                          'Change it up'
+                        ]) %}
+                        <li>
+                          <span class="info_icon">
+                            <i class="fa-light fa-circle-check"></i>
+                          </span>
+                          <span class="info_text">{{ benefit }}</span>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                      <ul class="info_list unordered_list_block mb-4">
+                        {% for benefit in service.benefits_right|default([
+                          'Give a little; get a lot',
+                          'Do what you say you will do',
+                          'Be a good listener'
+                        ]) %}
+                        <li>
+                          <span class="info_icon">
+                            <i class="fa-light fa-circle-check"></i>
+                          </span>
+                          <span class="info_text">{{ benefit }}</span>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                  <p class="mb-0">
+                    {{ service.benefits_conclusion|default('Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.') }}
+                  </p>
+                </div>
+
+                <div class="prev_next_post_nav mb-5">
+                  {% if prev_service %}
+                  <a href="{{ path('service_details', {'id': prev_service.id}) }}">
+                    <span class="item_icon">
+                      <i class="fa-regular fa-angle-left"></i>
+                    </span>
+                    <span class="item_content">
+                      <b>Previous</b>
+                      <strong>{{ prev_service.title }}</strong>
+                    </span>
+                  </a>
+                  {% endif %}
+                  {% if next_service %}
+                  <a href="{{ path('service_details', {'id': next_service.id}) }}">
+                    <span class="item_icon">
+                      <i class="fa-regular fa-angle-right"></i>
+                    </span>
+                    <span class="item_content">
+                      <b>Next</b>
+                      <strong>{{ next_service.title }}</strong>
+                    </span>
+                  </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <div class="service_author shadow-none">
+              <div class="row justify-content-center">
+                <div class="col-lg-9">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6">
+                      <div
+                        class="d-lg-flex text-lg-start justify-content-lg-start text-center justify-content-center align-items-center"
+                      >
+                        <div class="author_image">
+                          <img
+                            src="{{ asset(service.author_image|default('assets/images/meta/author_image_3-min.png')) }}"
+                            alt="Talking Minds - Psychotherapist Site Template"
+                          />
+                        </div>
+                        <div class="author_content">
+                          <h4 class="author_name">{{ service.author_name|default('Dr. Merry Rose') }}</h4>
+                          <span class="author_designation mb-0"
+                            >{{ service.author_designation|default('Practicing psychologist, Psy. D') }}</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <ul
+                        class="social_links unordered_list justify-content-center justify-content-lg-end"
+                      >
+                        <li>
+                          <a href="{{ social_links.facebook|default('#!') }}"
+                            ><i class="fa-brands fa-facebook-f"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="{{ social_links.instagram|default('#!') }}"
+                            ><i class="fa-brands fa-instagram"></i
+                          ></a>
+                        </li>
+                        <li>
+                          <a href="{{ social_links.twitter|default('#!') }}"><i class="fa-brands fa-twitter"></i></a>
+                        </li>
+                        <li>
+                          <a href="{{ social_links.whatsapp|default('#!') }}"><i class="fa-brands fa-whatsapp"></i></a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Service Details Section - End -->
+
+        <!-- Service Section - Start -->
+        <section class="service_section">
+          <div class="container">
+            <div class="section_heading text-center">
+              <h2 class="section_heading_text">{{ other_services_title|default('Other Services') }}</h2>
+              <p class="section_heading_description mb-0">
+                {{ other_services_description|default('Lorem Ipsum is simply dummy text of the printing and typesetting industry') }}
+              </p>
+            </div>
+
+            <div class="row justify-content-center">
+              {% for other_service in other_services|slice(0, 3) %}
+              <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service_item">
+                  <div class="item_icon">
+                    <img
+                      src="{{ asset('assets/images/icons/' ~ other_service.icon) }}"
+                      alt="{{ other_service.icon_alt|default('Icon - HelpMeBalance') }}"
+                    />
+                  </div>
+                  <div class="item_contact">
+                    <h3 class="item_title">{{ other_service.title }}</h3>
+                    <p>
+                      {{ other_service.description|slice(0, 100) }}...
+                    </p>
+                    <a class="btn-link" href="{{ path('service_details', {'id': other_service.id}) }}">
+                      <span class="btn_text">More Info</span>
+                      <span class="btn_icon"
+                        ><i class="fa-solid fa-arrow-up-right"></i
+                      ></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <div class="btn_wrap pb-0 text-center">
+              <a class="btn btn-primary" href="{{ path('services') }}">
+                <span class="btn_text" data-text="All Services">
+                  All Services
+                </span>
+                <span class="btn_icon">
+                  <i class="fa-solid fa-arrow-up-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- Service Section - End -->
+
+        <!-- Consultation Section - Start -->
+        <section class="consultation_section section_space_lg pb-0">
+          <div class="container">
+            <div class="consultation_form bg_primary_light decoration_wrapper">
+              <div class="section_heading text-center">
+                <h2 class="section_heading_text mb-0">
+                  <span class="d-md-block">{{ consultation_title|default('Get your first free') }}</span> online
+                  consultation
+                </h2>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-lg-7">
+                  <form action="{{ path('consultation_submit') }}" method="post">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input_name">Name</label>
+                          <input
+                            id="input_name"
+                            class="form-control"
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            value="{{ form_data.name|default('') }}"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input_phone">Phone</label>
+                          <input
+                            id="input_phone"
+                            class="form-control"
+                            type="tel"
+                            name="phone"
+                            placeholder="Mobile phone number"
+                            value="{{ form_data.phone|default('') }}"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="select_therapy">Section</label>
+                          <select
+                            id="select_therapy"
+                            class="form-select"
+                            name="therapy"
+                            aria-label="Therapy Select Options"
+                          >
+                            <option value="">Select Therapy</option>
+                            {% for therapy in therapies %}
+                            <option value="{{ therapy.id }}" {{ form_data.therapy == therapy.id ? 'selected' : '' }}>{{ therapy.name }}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="input_calendar">Phone</label>
+                          <input
+                            id="input_calendar"
+                            class="form-control"
+                            type="date"
+                            name="date"
+                            value="{{ form_data.date|default('') }}"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn_wrap pb-0 text-center">
+                      <button type="submit" class="btn btn-primary">
+                        <span class="btn_text" data-text="Get A Consultation">
+                          Get A Consultation
+                        </span>
+                        <span class="btn_icon">
+                          <i class="fa-solid fa-arrow-up-right"></i>
+                        </span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="decoration_item shape_leaf_1">
+                <img
+                  src="{{ asset('assets/images/shapes/shape_leaf_right_top.svg') }}"
+                  alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
+                />
+              </div>
+              <div class="decoration_item shape_leaf_2">
+                <img
+                  src="{{ asset('assets/images/shapes/shape_leaf_left_bottom.svg') }}"
+                  alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Consultation Section - End -->
+
+        <!-- Contact Section - Start -->
+        <section class="contact_section section_space_lg">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <div class="section_heading">
+                  <h2 class="section_heading_text">{{ contact_info_title|default('Contact Info') }}</h2>
+                  <p class="section_heading_description mb-0">
+                    {{ contact_info_description|default('If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden') }}
+                  </p>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-6">
+                    <div class="contact_info_box">
+                      <div class="item_icon">
+                        <i class="fa-solid fa-phone"></i>
+                      </div>
+                      <div class="item_contact">
+                        <h3 class="item_title">Phone</h3>
+                        <ul class="info_list unordered_list_block">
+                          {% for phone in contact_info.phones|default(['+880-1680-6361-89', '+1-234-56-78-123']) %}
+                          <li>
+                            <span class="info_text">{{ phone }}</span>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="contact_info_box">
+                      <div class="item_icon">
+                        <i class="fa-solid fa-envelope"></i>
+                      </div>
+                      <div class="item_contact">
+                        <h3 class="item_title">Email</h3>
+                        <ul class="info_list unordered_list_block">
+                          {% for email in contact_info.emails|default(['info@talkingminds.com', 'contact@talkingminds.com']) %}
+                          <li>
+                            <span class="info_text">{{ email }}</span>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="contact_info_box">
+                      <div class="item_icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                      </div>
+                      <div class="item_contact">
+                        <h3 class="item_title">Address</h3>
+                        <ul class="info_list unordered_list_block">
+                          {% for address in contact_info.addresses|default(['49, Caradon Hill,', 'ULBSTER']) %}
+                          <li>
+                            <span class="info_text">{{ address }}</span>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <div class="contact_info_box">
+                      <div class="item_icon">
+                        <i class="fa-solid fa-clock"></i>
+                      </div>
+                      <div class="item_contact">
+                        <h3 class="item_title">Working Hours</h3>
+                        <ul class="info_list unordered_list_block">
+                          {% for hours in contact_info.hours|default(['Mon to Fri 8 am - 6 pm', 'Sat to Sun 9 am - 2 pm']) %}
+                          <li>
+                            <span class="info_text">{{ hours }}</span>
+                          </li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="gmap_canvas ps-lg-3">
+                  <iframe
+                    src="{{ contact_info.map_url|default('https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed') }}"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Contact Section - End -->
+      </main>
+      <!-- Main Body - End -->
+
+      <!-- Site Footer - Start -->
+      <footer class="site_footer bg_primary">
+        <div class="container">
+          <div class="site_footer_content">
+            <div class="row align-items-center">
+              <div class="col-lg-3">
+                <div class="site_logo">
+                  <a class="site_link" href="{{ path('home') }}">
+                    <img
+                      src="{{ asset('assets/images/site_logo/site_logo_white.svg') }}"
+                      alt="Site Logo – HelpMeBalance"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <ul class="info_list unordered_list justify-content-center">
+                  <li>
+                    <a href="{{ path('home') }}">
+                      <span class="info_icon">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="info_text">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ path('about') }}">
+                      <span class="info_icon">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="info_text">About</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ path('services') }}">
+                      <span class="info_icon">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="info_text">Program</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ path('blog_grid') }}">
+                      <span class="info_icon">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="info_text">Blog</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ path('gallery') }}">
+                      <span class="info_icon">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="info_text">Gallery</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ path('contact_clinic') }}">
+                      <span class="info_icon">
+                        <i class="fa-solid fa-circle"></i>
+                      </span>
+                      <span class="info_text">Contacts</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-3">
+                <ul
+                  class="social_links unordered_list justify-content-center justify-content-lg-end"
+                >
+                  <li>
+                    <a href="{{ social_links.facebook|default('#!') }}"><i class="fa-brands fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="{{ social_links.instagram|default('#!') }}"><i class="fa-brands fa-instagram"></i></a>
+                  </li>
+                  <li>
+                    <a href="{{ social_links.twitter|default('#!') }}"><i class="fa-brands fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="{{ social_links.whatsapp|default('#!') }}"><i class="fa-brands fa-whatsapp"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="copyright_widget text-center">
+            <p class="copyright_text m-0">
+              Merkulove © <b>TalkingMinds</b> Template All rights reserved
+              Copyrights {{ "now"|date("Y") }}
+            </p>
+          </div>
+        </div>
+      </footer>
+      <!-- Site Footer - End -->
+    </div>
+    <!-- Body Wrap - End -->
+
+    <!-- Framework - JQuery Include -->
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-dropdown-ml-hack.min.js') }}"></script>
+
+    <!-- Animation - JQuery Include -->
+    <script src="{{ asset('assets/js/cursor.min.js') }}"></script>
+
+    <!-- Carousel - JQuery Include -->
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+
+    <!-- Video & Image Popup - JQuery Include -->
+    <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
+
+    <!-- Counter - JQuery Include -->
+    <script src="{{ asset('assets/js/appear.min.js') }}"></script>
+    <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
+
+    <!-- Custom - JQuery Include -->
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+  </body>
+</html>

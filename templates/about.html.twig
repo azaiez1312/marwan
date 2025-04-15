@@ -11,49 +11,69 @@
     <title>About Us - HelpMeBalance</title>
     <link
       rel="shortcut icon"
-      href="assets/images/site_logo/favourite_icon.svg"
+      href="{{ asset('asset/images/site_logo/favourite_icon.svg') }}"
     />
 
     <!-- Fraimwork - CSS Include -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/css/bootstrap.min.css"
+      href="{{ asset('assets/css/bootstrap.min.css') }}"
     />
 
     <!-- Icon Font - CSS Include -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/css/fontawesome.min.css"
+      href="{{ asset('assets/css/fontawesome.min.css') }}"
     />
 
     <!-- Animation - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css" />
-
-    <!-- Cursor - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/cursor.min.css" />
-
-    <!-- Carousel - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css" />
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/css/slick-theme.min.css"
+      href="{{ asset('assets/css/animate.min.css') }}"
+    />
+
+    <!-- Cursor - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/cursor.min.css') }}"
+    />
+
+    <!-- Carousel - CSS Include -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/slick.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/slick-theme.min.css') }}"
     />
 
     <!-- Video & Image Popup - CSS Include -->
     <link
       rel="stylesheet"
       type="text/css"
-      href="assets/css/magnific-popup.min.css"
+      href="{{ asset('assets/css/magnific-popup.min.css') }}"
     />
 
     <!-- Counter - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/odometer.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/odometer.min.css') }}"
+    />
 
     <!-- Custom - CSS Include -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ asset('assets/css/style.css') }}"
+    />
   </head>
 
   <body>
@@ -74,9 +94,9 @@
           <div class="row align-items-center">
             <div class="col-lg-3 col-5 h-10">
               <div class="site_logo">
-                <a class="site_link" href="index.html">
+                <a class="nav-link" href="{{ path('index') }}">
                   <img
-                    src="assets/images/site_logo/site_logo_primary - Copy.svg"
+                    src="{{ asset('assets/images/site_logo/site_logo_primary - Copy.svg') }}"
                     alt="Site Logo – HelpMeBalance"
                   />
                 </a>
@@ -90,13 +110,13 @@
                 >
                   <ul class="main_menu_list unordered_list">
                     <li>
-                      <a class="nav-link" href="index.html">Home</a>
+                      <a class="nav-link" href="{{ path('index') }}">Home</a>
                     </li>
                     <li class="active">
-                      <a class="nav-link" href="about.html">About</a>
+                      <a class="nav-link" href="{{ path('about') }}">About</a>
                     </li>
                     <li>
-                      <a class="nav-link" href="shop.html">Shop</a>
+                      <a class="nav-link" href="{{ path('shop') }}">Shop</a>
                     </li>
 
                     <li class="dropdown">
@@ -114,12 +134,12 @@
                         class="dropdown-menu"
                         aria-labelledby="programs_submenu"
                       >
-                        <li><a href="service.html">Our Services</a></li>
+                        <li><a href="{{ path('service') }}">Our Services</a></li>
                         <li>
-                          <a href="service_details.html">Depression Therapy</a>
+                          <a href="{{ path('service_details') }}">Depression Therapy</a>
                         </li>
                         <li>
-                          <a href="service_details_2.html">Relationships</a>
+                          <a href="{{ path('service_details_2') }}">Relationships</a>
                         </li>
                       </ul>
                     </li>
@@ -135,8 +155,8 @@
                         Help
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="help_submenu">
-                        <li><a href="team.html">Our Team</a></li>
-                        <li><a href="gallery.html">Our Gallery</a></li>
+                        <li><a href="{{ path('team') }}">Our Team</a></li>
+                        <li><a href="{{ path('gallery') }}">Our Gallery</a></li>
                         <li class="dropdown">
                           <a
                             class="nav-link"
@@ -152,15 +172,15 @@
                             class="dropdown-menu"
                             aria-labelledby="blog_submenu"
                           >
-                            <li><a href="blog.html">Blog Grid</a></li>
-                            <li><a href="blog_list.html">Blog Listing</a></li>
+                            <li><a href="{{ path('blog') }}">Blog Grid</a></li>
+                            <li><a href="{{ path('blog_list') }}">Blog Listing</a></li>
                             <li>
-                              <a href="blog_details.html">Blog Details</a>
+                              <a href="{{ path('blog_details') }}">Blog Details</a>
                             </li>
                           </ul>
                         </li>
-                        <li><a href="faq.html">F.A.Q.</a></li>
-                        <li><a href="error.html">404 Error</a></li>
+                        <li><a href="{{ path('faq') }}">F.A.Q.</a></li>
+                        <li><a href="{{ path('error') }}">404 Error</a></li>
                       </ul>
                     </li>
                     <li class="dropdown">
@@ -179,17 +199,17 @@
                         aria-labelledby="contact_submenu"
                       >
                         <li>
-                          <a class="nav-link" href="contact.html"
+                          <a class="nav-link" href="{{ path('contact') }}"
                             >Clinic Contacts</a
                           >
                         </li>
                         <li>
-                          <a class="nav-link" href="contact_2.html"
+                          <a class="nav-link" href="{{ path('contact_2') }}"
                             >Contact Information</a
                           >
                         </li>
                         <li>
-                          <a class="nav-link" href="contact_3.html"
+                          <a class="nav-link" href="{{ path('contact_3') }}"
                             >Contact Details</a
                           >
                         </li>
@@ -214,7 +234,7 @@
                   </button>
                 </li>
                 <li>
-                  <a class="btn btn-primary" href="login.html">
+                  <a class="btn btn-primary" href="{{ path('login') }}">
                     <span class="btn_text" data-text="Get A Consultation">
                       Get A Consultation
                     </span>
@@ -246,7 +266,7 @@
                 <ul
                   class="breadcrumb_nav unordered_list justify-content-lg-end justify-content-center"
                 >
-                  <li><a href="index.html">Home</a></li>
+                  <li><a href="{{ path('index') }}">Home</a></li>
                   <li>About</li>
                 </ul>
               </div>
@@ -254,13 +274,13 @@
           </div>
           <div class="decoration_item shape_leaf_1">
             <img
-              src="assets/images/shapes/shape_leaf_left.svg"
+              src="{{ asset('assets/images/shapes/shape_leaf_left.svg') }}"
               alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
             />
           </div>
           <div class="decoration_item shape_leaf_2">
             <img
-              src="assets/images/shapes/shape_leaf_right.svg"
+              src="{{ asset('assets/images/shapes/shape_leaf_right.svg') }}"
               alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
             />
           </div>
@@ -276,7 +296,7 @@
               <div class="col-lg-6 order-lg-last">
                 <div class="image_widget">
                   <img
-                    src="assets/images/about/about_image_1-min.jpg"
+                    src="{{ asset('assets/images/about/about_image_1-min.jpg') }}"
                     alt="About Image - HelpMeBalance"
                   />
                   <div class="image_shape bg_primary_light"></div>
@@ -344,7 +364,7 @@
                     </div>
                   </div>
                   <div class="btn_wrap pb-0">
-                    <a class="btn btn-primary" href="about.html">
+                    <a class="btn btn-primary" href="{{ path('about') }}">
                       <span class="btn_text" data-text="Learn More">
                         Learn More
                       </span>
@@ -423,10 +443,10 @@
                 <a
                   class="certificate_image popup_image"
                   data-cursor-text="Scroll"
-                  href="assets/images/certificate/certificate_image_1-min.jpg"
+                  href="{{ asset('assets/images/certificate/certificate_image_1-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/certificate/certificate_image_1-min.jpg"
+                    src="{{ asset('assets/images/certificate/certificate_image_1-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -435,10 +455,10 @@
                 <a
                   class="certificate_image popup_image"
                   data-cursor-text="Scroll"
-                  href="assets/images/certificate/certificate_image_2-min.jpg"
+                  href="{{ asset('assets/images/certificate/certificate_image_2-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/certificate/certificate_image_2-min.jpg"
+                    src="{{ asset('assets/images/certificate/certificate_image_2-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -447,10 +467,10 @@
                 <a
                   class="certificate_image popup_image"
                   data-cursor-text="Scroll"
-                  href="assets/images/certificate/certificate_image_3-min.jpg"
+                  href="{{ asset('assets/images/certificate/certificate_image_3-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/certificate/certificate_image_3-min.jpg"
+                    src="{{ asset('assets/images/certificate/certificate_image_3-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -459,10 +479,10 @@
                 <a
                   class="certificate_image popup_image"
                   data-cursor-text="Scroll"
-                  href="assets/images/certificate/certificate_image_1-min.jpg"
+                  href="{{ asset('assets/images/certificate/certificate_image_1-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/certificate/certificate_image_1-min.jpg"
+                    src="{{ asset('assets/images/certificate/certificate_image_1-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -471,10 +491,10 @@
                 <a
                   class="certificate_image popup_image"
                   data-cursor-text="Scroll"
-                  href="assets/images/certificate/certificate_image_2-min.jpg"
+                  href="{{ asset('assets/images/certificate/certificate_image_2-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/certificate/certificate_image_2-min.jpg"
+                    src="{{ asset('assets/images/certificate/certificate_image_2-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -483,10 +503,10 @@
                 <a
                   class="certificate_image popup_image"
                   data-cursor-text="Scroll"
-                  href="assets/images/certificate/certificate_image_3-min.jpg"
+                  href="{{ asset('assets/images/certificate/certificate_image_3-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/certificate/certificate_image_3-min.jpg"
+                    src="{{ asset('assets/images/certificate/certificate_image_3-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -507,21 +527,21 @@
                   <ul class="unordered_list">
                     <li>
                       <img
-                        src="assets/images/about/about_image_6-min.png"
+                        src="{{ asset('assets/images/about/about_image_6-min.png') }}"
                         alt="Talking Minds - Psychotherapist Site Template"
                       />
                       <img
-                        src="assets/images/about/about_image_7-min.png"
+                        src="{{ asset('assets/images/about/about_image_7-min.png') }}"
                         alt="Talking Minds - Psychotherapist Site Template"
                       />
                     </li>
                     <li>
                       <img
-                        src="assets/images/about/about_image_8-min.png"
+                        src="{{ asset('assets/images/about/about_image_8-min.png') }}"
                         alt="Talking Minds - Psychotherapist Site Template"
                       />
                       <img
-                        src="assets/images/about/about_image_9-min.png"
+                        src="{{ asset('assets/images/about/about_image_9-min.png') }}"
                         alt="Talking Minds - Psychotherapist Site Template"
                       />
                     </li>
@@ -600,7 +620,7 @@
                 <div class="service_item">
                   <div class="item_icon">
                     <img
-                      src="assets/images/icons/icon_brain.svg"
+                      src="{{ asset('assets/images/icons/icon_brain.svg') }}"
                       alt="Brain Icon - HelpMeBalance"
                     />
                   </div>
@@ -610,7 +630,7 @@
                       Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem accusant doloremqe laudantium.
                     </p>
-                    <a class="btn-link" href="service_details.html">
+                    <a class="btn-link" href="{{ path('service_details') }}">
                       <span class="btn_text">More Info</span>
                       <span class="btn_icon"
                         ><i class="fa-solid fa-arrow-up-right"></i
@@ -623,7 +643,7 @@
                 <div class="service_item">
                   <div class="item_icon">
                     <img
-                      src="assets/images/icons/icon_head_double.svg"
+                      src="{{ asset('assets/images/icons/icon_head_double.svg') }}"
                       alt="Head Double Icon - HelpMeBalance"
                     />
                   </div>
@@ -633,7 +653,7 @@
                       Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem accusant doloremqe laudantium.
                     </p>
-                    <a class="btn-link" href="service_details.html">
+                    <a class="btn-link" href="{{ path('service_details') }}">
                       <span class="btn_text">More Info</span>
                       <span class="btn_icon"
                         ><i class="fa-solid fa-arrow-up-right"></i
@@ -646,7 +666,7 @@
                 <div class="service_item">
                   <div class="item_icon">
                     <img
-                      src="assets/images/icons/icon_head.svg"
+                      src="{{ asset('assets/images/icons/icon_head.svg') }}"
                       alt="Brain Icon - HelpMeBalance"
                     />
                   </div>
@@ -656,7 +676,7 @@
                       Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem accusant doloremqe laudantium.
                     </p>
-                    <a class="btn-link" href="service_details.html">
+                    <a class="btn-link" href="{{ path('service_details') }}">
                       <span class="btn_text">More Info</span>
                       <span class="btn_icon"
                         ><i class="fa-solid fa-arrow-up-right"></i
@@ -669,7 +689,7 @@
                 <div class="service_item">
                   <div class="item_icon">
                     <img
-                      src="assets/images/icons/icon_head_plus.svg"
+                      src="{{ asset('assets/images/icons/icon_head_plus.svg') }}"
                       alt="Brain Icon - HelpMeBalance"
                     />
                   </div>
@@ -679,7 +699,7 @@
                       Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem accusant doloremqe laudantium.
                     </p>
-                    <a class="btn-link" href="service_details.html">
+                    <a class="btn-link" href="{{ path('service_details') }}">
                       <span class="btn_text">More Info</span>
                       <span class="btn_icon"
                         ><i class="fa-solid fa-arrow-up-right"></i
@@ -692,7 +712,7 @@
                 <div class="service_item">
                   <div class="item_icon">
                     <img
-                      src="assets/images/icons/icon_head_children.svg"
+                      src="{{ asset('assets/images/icons/icon_head_children.svg') }}"
                       alt="Head Double Icon - HelpMeBalance"
                     />
                   </div>
@@ -702,7 +722,7 @@
                       Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem accusant doloremqe laudantium.
                     </p>
-                    <a class="btn-link" href="service_details.html">
+                    <a class="btn-link" href="{{ path('service_details') }}">
                       <span class="btn_text">More Info</span>
                       <span class="btn_icon"
                         ><i class="fa-solid fa-arrow-up-right"></i
@@ -715,7 +735,7 @@
                 <div class="service_item">
                   <div class="item_icon">
                     <img
-                      src="assets/images/icons/icon_brain_plus.svg"
+                      src="{{ asset('assets/images/icons/icon_brain_plus.svg') }}"
                       alt="Brain Icon - HelpMeBalance"
                     />
                   </div>
@@ -725,7 +745,7 @@
                       Sed ut perspiciatis unde omnis iste natus error sit
                       voluptatem accusant doloremqe laudantium.
                     </p>
-                    <a class="btn-link" href="service_details.html">
+                    <a class="btn-link" href="{{ path('service_details') }}">
                       <span class="btn_text">More Info</span>
                       <span class="btn_icon"
                         ><i class="fa-solid fa-arrow-up-right"></i
@@ -737,7 +757,7 @@
             </div>
 
             <div class="btn_wrap pb-0 text-center">
-              <a class="btn btn-primary" href="service.html">
+              <a class="btn btn-primary" href="{{ path('service') }}">
                 <span class="btn_text" data-text="All Programs">
                   All Programs
                 </span>
@@ -767,10 +787,10 @@
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <a
                   class="gallery_item popup_image"
-                  href="assets/images/gallery/gallery_image_1-min.jpg"
+                  href="{{ asset('assets/images/gallery/gallery_image_1-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/gallery/gallery_image_1-min.jpg"
+                    src="{{ asset('assets/images/gallery/gallery_image_1-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -778,10 +798,10 @@
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <a
                   class="gallery_item popup_image"
-                  href="assets/images/gallery/gallery_image_2-min.jpg"
+                  href="{{ asset('assets/images/gallery/gallery_image_2-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/gallery/gallery_image_2-min.jpg"
+                    src="{{ asset('assets/images/gallery/gallery_image_2-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -789,10 +809,10 @@
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <a
                   class="gallery_item popup_image"
-                  href="assets/images/gallery/gallery_image_3-min.jpg"
+                  href="{{ asset('assets/images/gallery/gallery_image_3-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/gallery/gallery_image_3-min.jpg"
+                    src="{{ asset('assets/images/gallery/gallery_image_3-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -800,10 +820,10 @@
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <a
                   class="gallery_item popup_image"
-                  href="assets/images/gallery/gallery_image_4-min.jpg"
+                  href="{{ asset('assets/images/gallery/gallery_image_4-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/gallery/gallery_image_4-min.jpg"
+                    src="{{ asset('assets/images/gallery/gallery_image_4-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -811,10 +831,10 @@
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <a
                   class="gallery_item popup_image"
-                  href="assets/images/gallery/gallery_image_5-min.jpg"
+                  href="{{ asset('assets/images/gallery/gallery_image_5-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/gallery/gallery_image_5-min.jpg"
+                    src="{{ asset('assets/images/gallery/gallery_image_5-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -822,10 +842,10 @@
               <div class="col-lg-4 col-md-6 col-sm-6">
                 <a
                   class="gallery_item popup_image"
-                  href="assets/images/gallery/gallery_image_6-min.jpg"
+                  href="{{ asset('assets/images/gallery/gallery_image_6-min.jpg') }}"
                 >
                   <img
-                    src="assets/images/gallery/gallery_image_6-min.jpg"
+                    src="{{ asset('assets/images/gallery/gallery_image_6-min.jpg') }}"
                     alt="Talking Minds - Psychotherapist Site Template"
                   />
                 </a>
@@ -833,7 +853,7 @@
             </div>
 
             <div class="btn_wrap pb-0 text-center">
-              <a class="btn btn-primary" href="gallery.html">
+              <a class="btn btn-primary" href="{{ path('gallery') }}">
                 <span class="btn_text" data-text="See More Photos">
                   See More Photos
                 </span>
@@ -926,13 +946,13 @@
               </div>
               <div class="decoration_item shape_leaf_1">
                 <img
-                  src="assets/images/shapes/shape_leaf_right_top.svg"
+                  src="{{ asset('assets/images/shapes/shape_leaf_right_top.svg') }}"
                   alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
                 />
               </div>
               <div class="decoration_item shape_leaf_2">
                 <img
-                  src="assets/images/shapes/shape_leaf_left_bottom.svg"
+                  src="{{ asset('assets/images/shapes/shape_leaf_left_bottom.svg') }}"
                   alt="Shape Leaf - Talking Minds - Psychotherapist Site Template"
                 />
               </div>
@@ -953,9 +973,9 @@
             <div class="row align-items-center">
               <div class="col-lg-3">
                 <div class="site_logo">
-                  <a class="site_link" href="index.html">
+                  <a class="site_link" href="{{ path('index') }}">
                     <img
-                      src="assets/images/site_logo/site_logo_white.svg"
+                      src="{{ asset('assets/images/site_logo/site_logo_white.svg') }}"
                       alt="Site Logo – HelpMeBalance"
                     />
                   </a>
@@ -964,7 +984,7 @@
               <div class="col-lg-6">
                 <ul class="info_list unordered_list justify-content-center">
                   <li>
-                    <a href="index.html">
+                    <a href="{{ path('index') }}">
                       <span class="info_icon">
                         <i class="fa-solid fa-circle"></i>
                       </span>
@@ -972,7 +992,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="about.html">
+                    <a href="{{ path('about') }}">
                       <span class="info_icon">
                         <i class="fa-solid fa-circle"></i>
                       </span>
@@ -980,7 +1000,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="service.html">
+                    <a href="{{ path('service') }}">
                       <span class="info_icon">
                         <i class="fa-solid fa-circle"></i>
                       </span>
@@ -988,7 +1008,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="blog.html">
+                    <a href="{{ path('blog') }}">
                       <span class="info_icon">
                         <i class="fa-solid fa-circle"></i>
                       </span>
@@ -996,7 +1016,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="gallery.html">
+                    <a href="{{ path('gallery') }}">
                       <span class="info_icon">
                         <i class="fa-solid fa-circle"></i>
                       </span>
@@ -1004,7 +1024,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="contact.html">
+                    <a href="{{ path('contact') }}">
                       <span class="info_icon">
                         <i class="fa-solid fa-circle"></i>
                       </span>
@@ -1047,25 +1067,25 @@
     <!-- Body Wrap - End -->
 
     <!-- Fraimwork - Jquery Include -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-dropdown-ml-hack.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-dropdown-ml-hack.min.js') }}"></script>
 
     <!-- animation - jquery include -->
-    <script src="assets/js/cursor.min.js"></script>
+    <script src="{{ asset('assets/js/cursor.min.js') }}"></script>
 
     <!-- Carousel - Jquery Include -->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
 
     <!-- Video & Image Popup - Jquery Include -->
-    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
 
     <!-- Counter - Jquery Include -->
-    <script src="assets/js/appear.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
+    <script src="{{ asset('assets/js/appear.min.js') }}"></script>
+    <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
 
     <!-- Custom - Jquery Include -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
   </body>
 </html>

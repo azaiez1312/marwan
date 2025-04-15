@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>{{ page_title|default('Oops! Page Not Found') }} - HelpMeBalance</title>
+    <link rel="shortcut icon" href="{{ asset('assets/images/site_logo/favourite_icon.svg') }}" />
+
+    <!-- Framework - CSS Include -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fontawesome.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/cursor.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick-theme.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/magnific-popup.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/odometer.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}" />
+  </head>
+
+  <body>
+    <div class="page_wrapper">
+      <div class="backtotop">
+        <a href="#" class="scroll">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+
+      <main class="page_content">
+        <section class="error_section decoration_wrapper">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-7 text-center">
+                <h1>{{ error_code|default('404') }}</h1>
+                <h2>{{ error_message|default('Oops! That Page Can’t be Found') }}</h2>
+                <p>{{ error_description|default('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremqe laudantium.') }}</p>
+                <div class="btn_wrap pb-0 text-center">
+                  <a class="btn btn-primary" href="{{ path('home') }}">
+                    <span class="btn_icon me-2 ms-0">
+                      <i class="fa-solid fa-arrow-up-left"></i>
+                    </span>
+                    <span class="btn_text" data-text="Back to Home Page">
+                      {{ button_text|default('Back to Home Page') }}
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="social_links unordered_list justify-content-center">
+            <li><a href="{{ social_links.facebook|default('#!') }}"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="{{ social_links.instagram|default('#!') }}"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="{{ social_links.twitter|default('#!') }}"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="{{ social_links.whatsapp|default('#!') }}"><i class="fa-brands fa-whatsapp"></i></a></li>
+          </ul>
+
+          <div class="decoration_item shape_leaf_1">
+            <img src="{{ asset('assets/images/shapes/shape_leaf_left_bottom.svg') }}" alt="Shape Leaf - Talking Minds - Psychotherapist Site Template" />
+          </div>
+          <div class="decoration_item shape_leaf_2">
+            <img src="{{ asset('assets/images/shapes/shape_leaf_right_top.svg') }}" alt="Shape Leaf - Talking Minds - Psychotherapist Site Template" />
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap-dropdown-ml-hack.min.js') }}"></script>
+    <script src="{{ asset('assets/js/cursor.min.js') }}"></script>
+    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
+    <script src="{{ asset('assets/js/magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('assets/js/appear.min.js') }}"></script>
+    <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+  </body>
+</html>
